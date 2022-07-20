@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/*======アニメーション=======*/
+
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.splashbg{
+    display: none;
+}
+
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    background-color: #333;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+#container{
+	opacity: 0;
+}
+
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}    
+
+
+
+/*======レイアウト=======*/
+
+body{
+background-color: #ccc;
+}
+
+main {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    left: 40%;
+}
+
+select {
+    width: 120px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-size: large;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all  0.5s ease;
+    background: transparent;
+	cursor: pointer;
+}
+
+select:hover {
+	color: #fff;
+	background-color: #333;
+}
+
+input {
+    font-size: large;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    background: transparent;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all  0.5s ease;
+	border-radius: 3%;
+	cursor: pointer;
+}
+
+input:hover {
+	color: #fff;
+	background-color: #333;
+}
+
+input[type="submit"] {
+    position: relative;
+	width: 100px;
+    background-color: black;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+	text-align: center;
+	font-size: 25px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all  0.5s ease;
+	border-radius: 3%;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	color:#333;
+	background-color: #fff;
+}
+
+table {
+    position: relative;
+}
+
+#header{
+    background:rgba(55, 55, 55, 0.7);
+    color:#fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+h1 {
+    font-style: italic;
+    font-size:2rem;  
+}
+
+h2{
+    font-size: 1.5rem;  
+}
+  
+  

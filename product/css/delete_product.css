@@ -1,0 +1,58 @@
+/*=====レイアウト=====*/
+
+body {
+    background-color:#ccc;
+}
+
+main {
+    position: fixed;
+    width: 100%;
+    top: 30%;
+    left: 35%;
+}
+
+form[name="contents"] {
+    position: fixed;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+input[type="submit"] {
+    position: relative;
+	width: 150px;
+    background-color: black;
+    color: #fff;
+    font-family: 'Exo', sans-serif;
+	text-align: center;
+	font-size: 25px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all  0.5s ease;
+	border-radius: 3%;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	color:#333;
+	background-color: #fff;
+}
+
+#header{
+    background:rgba(55, 55, 55, 0.7);
+    color:#fff;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-style: italic;
+    font-size:2rem;  
+}
+
+h2{
+    font-size: 1.5rem;  
+}
+
+

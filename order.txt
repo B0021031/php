@@ -1,0 +1,79 @@
+create table users(
+  user_id     nvarchar(20),
+  name        nvarchar(30) not null,
+  password    nvarchar(15) not null,
+  email       nvarchar(256) not null,
+  permission  tinyint,
+  primary key(user_id)
+ );
+
+create table type(
+  type_id  tinyint,
+  name     nvarchar(5) not null,
+  primary key(type_id)
+);
+
+create table status(
+  status_id      tinyint,
+  status         char(3) not null,
+  delivery_date  date,
+  primary key(status_id)
+);
+
+create table products(
+  product_id    tinyint  auto_increment,
+  type          tinyint not null,
+  name          nvarchar(30) not null,
+  price         int not null,
+  order_date    date not null,
+  order_status  tinyint not null,
+  order_user    nvarchar(30) not null,
+  primary key(product_id),
+  foreign key(type) references type(type_id),
+  foreign key(order_status) references status(status_id),
+  foreign key(order_user) references users(user_id)
+);
+
+
+
+insert into users values('hoge', '山口太郎', 'P@ssw0rd', 'hoge@yic.ac.jp', 1);
+insert into users values('k-ygawa', '柳川小次郎', 'kojikoji', 'k-ygawa@yic.ac.jp', 2);
+insert into users values('sugi', '杉林伸繁', 'sugisugi', 'sugi@yic.ac.jp', 2);
+
+insert into status values(1, '発注済', NULL);
+insert into status values(2, '納品済', '2020-6-22');
+insert into status values(3, '未発注', NULL);
+insert into status values(4, '未発注', NULL);
+insert into status values(5, '未発注', NULL);
+insert into status values(6, '未発注', NULL);
+insert into status values(7, '未発注', NULL);
+insert into status values(8, '未発注', NULL);
+
+insert into type values(1, '書籍');
+insert into type values(2, 'サプライ品');
+insert into type values(3, 'ドローン');
+insert into type values(4, 'DVD');
+insert into type values(5, 'ゲーム');
+insert into type values(6, '家電');
+insert into type values(7, 'カメラ');
+insert into type values(8, 'AV機器');
+insert into type values(9, 'パソコン');
+insert into type values(10, 'オフィス用品');
+insert into type values(11, '食品・飲料');
+insert into type values(12, 'お酒');
+insert into type values(13, 'DIY');
+insert into type values(14, 'ペット');
+insert into type values(15, 'ビューティー');
+insert into type values(16, 'おもちゃ');
+insert into type values(17, '服');
+insert into type values(18, 'スポーツ');
+insert into type values(19, '車');
+
+insert into products(type, name, price, order_date, order_status, order_user) values(1, 'iPhoneアプリ開発集中講座', 2728, '2020-6-20', 1, 'hoge');
+insert into products(type, name, price, order_date, order_status, order_user) values(2, 'コピー用紙 A4', 700, '2020-6-21', 2, 'k-ygawa');
+insert into products(type, name, price, order_date, order_status, order_user) values(3, 'DJI Mini 2', 50490, '2020-6-18', 3, 'sugi');
+insert into products(type, name, price, order_date, order_status, order_user) values(2, 'コピー用紙 B5', 800, '2020-6-25', 4, 'k-ygawa');
+insert into products(type, name, price, order_date, order_status, order_user) values(4, 'DVD', 500, '2020-5-30', 5, 'k-ygawa');
+insert into products(type, name, price, order_date, order_status, order_user) values(12, 'ビール', 300, '2020-5-30', 6, 'k-ygawa');
+insert into products(type, name, price, order_date, order_status, order_user) values(14, '犬', 300000, '2020-7-1', 7, 'k-ygawa');
+insert into products(type, name, price, order_date, order_status, order_user) values(17, '洋服', 1500, '2020-6-24', 8, 'k-ygawa');

@@ -1,0 +1,55 @@
+<Doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    
+    <!--css-->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+    
+<body>
+    <div id="splash">
+        <div id="splash_text"></div>
+    </div>    
+ 
+    <div id="container">
+        <header id="header">
+        <h1>Login</h1>
+        </header>
+
+        <main>
+        <h2>Please enter your information</h2>
+        <div class="input-info">
+            <form action="login.php" method="get">
+                <label for="name"></label>
+                <input type="text" placeholder="username" name="name">
+                <p></p>
+            
+                <label for="password"></label>
+                <input type="password" placeholder="password" name="password">
+                <p></p>
+
+                <input type="hidden" name="begin" value=0>
+                <input type="hidden" name="size" value=5>
+                            
+                <input type="submit" name="submitBtn" value="login">
+            </form>    
+        </div>
+        </main>
+
+    <footer id="footer">
+        <small>B0021031@ib.yic.ac.jp</small>
+    </footer>
+    </div><!--/container-->
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--JQuery.cookie-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>-->
+    <!--Other Libraries-->
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <!--javascript-->
+    <script type="text/javascript" src="javascript/login.js"></script>
+</body>
+</html>
